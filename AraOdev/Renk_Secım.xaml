@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AraOdev.Renk_Secım"
+             Title="Renk_Secım">
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+       
+        <Label Text="RGB Renk Seçici" 
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        
+        <Label Text="Kırmızı" FontSize="18" />
+        <Slider x:Name="RedSlider" Maximum="255" />
+
+    
+        <Label Text="Yeşil" FontSize="18" />
+        <Slider x:Name="GreenSlider" Maximum="255" />
+
+       
+        <Label Text="Mavi" FontSize="18" />
+        <Slider x:Name="BlueSlider" Maximum="255" />
+
+        
+        <BoxView x:Name="SelectedColorBox"
+                 WidthRequest="200"
+                 HeightRequest="200"
+                 HorizontalOptions="Center"
+                 VerticalOptions="CenterAndExpand"
+                 Color="LightGray" />
+
+        
+        <Label x:Name="ColorCodeLabel" 
+               FontSize="18"
+               HorizontalOptions="Center" 
+               Text="Renk Kodu: #000000" />
+
+
+        <Button Text="Renk Kodunu Üret" Clicked="OnGenerateColorButtonClicked" />
+    </VerticalStackLayout>
+</ContentPage>

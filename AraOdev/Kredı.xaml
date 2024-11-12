@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AraOdev.Kredı"
+             Title="Kredı Hesaplama"
+             
+             >
+    <VerticalStackLayout Margin="14" Padding="10">
+        <Label 
+        Text="İhtiyaç Kredisi Hesaplayıcı"
+        VerticalOptions="Center" 
+        TextColor="Orange"
+        FontSize="24"
+        HorizontalOptions="Center"  Margin="10"/>
+
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto , Auto" ColumnDefinitions="*,*" ColumnSpacing="10">
+            <Label Text="Kredi Tutarı (TL):" Grid.Row="0" Grid.Column="0"/>
+            <Entry x:Name="AmountEntry" Grid.Column="1" Grid.Row="0" Keyboard="Numeric"/>
+
+            <Label Text="Faiz Oranı (%):" Grid.Row="1" Grid.Column="0"/>
+            <Entry x:Name="InterestRateEntry" Grid.Column="1" Grid.Row="1" Keyboard="Numeric"/>
+
+            <Label Text="Vade (Ay):" Grid.Row="2" Grid.Column="0"/>
+            <Entry x:Name="TermEntry" Grid.Row="2" Grid.Column="1" Keyboard="Numeric"/>
+
+            <Label Text="Kredi Türü:" Grid.Row="3" Grid.Column="0"/>
+            <Picker x:Name="LoanTypePicker" Grid.Row="3" Grid.Column="1">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>İhtiyaç</x:String>
+                        <x:String>Konut</x:String>
+                        <x:String>Taşıt</x:String>
+                        <x:String>Ticari</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Hesapla" Grid.Row="4" Grid.ColumnSpan="2" Clicked="OnCalculateButtonClicked"/>
+
+            <Label Text="Aylık Taksit:" Grid.Row="5" Grid.Column="0"/>
+            <Label x:Name="MonthlyPaymentLabel" Text="$" Grid.Row="5" Grid.Column="1"/>
+
+            <Label Text="Toplam Ödeme:" Grid.Row="6" Grid.Column="0"/>
+            <Label x:Name="TotalPaymentLabel" Text="$" Grid.Row="6" Grid.Column="1"/>
+
+            <Label Text="Toplam Faiz:" Grid.Row="7" Grid.Column="0"/>
+            <Label x:Name="TotalInterestLabel" Text="$" Grid.Row="8" Grid.Column="1"/>
+        </Grid>
+    </VerticalStackLayout>
+
+</ContentPage>
